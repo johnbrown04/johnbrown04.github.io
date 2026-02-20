@@ -311,16 +311,7 @@
         }
 
         .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -49px;
-            top: 10px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary-accent);
-            border: 4px solid var(--bg-light);
-            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+            display: none;
         }
 
         @keyframes fadeInLeft {
@@ -962,6 +953,147 @@
             color: var(--text-muted);
             border: 1px solid rgba(127, 140, 141, 0.2);
         }
+        /* Courses Section */
+        .courses-container {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .semester-section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(52, 152, 219, 0.15);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .semester-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .semester-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .semester-gpa {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .semester-gpa .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .courses-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .courses-table thead {
+            background: rgba(52, 152, 219, 0.05);
+        }
+
+        .courses-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .courses-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .courses-table tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        .courses-table tbody tr:hover {
+            background: rgba(52, 152, 219, 0.03);
+        }
+
+        .course-code {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .course-name {
+            color: var(--text-dark);
+        }
+
+        .course-credits {
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .course-grade {
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .grade-a {
+            color: var(--accent-green);
+        }
+
+        .grade-b {
+            color: var(--primary-accent);
+        }
+
+        .grade-c {
+            color: var(--accent-warm);
+        }
+
+        .grade-other {
+            color: var(--text-dark);
+        }
+
+        .cumulative-gpa {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+        }
+
+        .cumulative-gpa h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .cumulative-gpa .gpa-value {
+            font-size: 3rem;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cumulative-gpa .gpa-scale {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -985,7 +1117,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#courses">Projects</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1010,7 +1142,7 @@
                         I also have an additional major in Theatre Arts, and minors in Public Health and Chemistry. 
                     </p>
                     <p>
-                        Through my time at the University of Miami, I've been able to get involved in numberous extracurriculars, including becoming a General
+                        During my time at the University of Miami, I've been able to get involved in numerous extracurriculars, including becoming a General
                         Chemistry Laboratory TA, Introduction to Structure and Dynamics (Organic Chemistry 1) Workshop Leader, President's 100 Student Ambassador, and more.
                     </p>
                     <p>
@@ -1032,36 +1164,60 @@
             </div>
 
             <div class="timeline">
-                <!-- Experience Item 1 -->
+                <!-- Experience Item - Multiple Positions -->
                 <div class="timeline-item">
                     <div class="experience-card">
+                        <!-- Company Name First -->
                         <div class="experience-header">
-                            <div>
-                                <h3 class="job-title">General Chemistry Laboratory TA</h3>
-                                <p class="company">University of Miami Department of Chemistry</p>
+                            <div style="flex: 1;">
+                                <p class="company" style="font-size: 1.8rem; margin-bottom: 1rem;">University of Miami Department of Chemistry</p>
                             </div>
-                            <div class="duration">August 2024 - Present</div>
                         </div>
-                        
-                        <div class="experience-description">
-                            <p>
-                                As a laboratory TA for an introductory level chemistry class, I served as most student's first introduction to a college level laboratory course.
-                                In doing so, I coached and guided students on the most effective ways to write scientific literature, in addition to helping with running experiements in the laboratory.
-                            </p>
-                            <p>
-                                This role as allowed me to give back to the program that has fostered my love for chemistry, and help younger undergraduate students also find the fun in a challenging course!
-                            </p>
+
+                        <!-- Position 1 -->
+                        <div style="margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">General Chemistry Laboratory TA</h3>
+                                <div class="duration">August 2024 - Present</div>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    As a laboratory TA for an introductory level chemistry class, I served as most student's first introduction to a college level laboratory course.
+                                    In doing so, I coached and guided students on the most effective ways to write scientific literature, in addition to helping with running experiments in the laboratory.
+
+                                    This role as allowed me to give back to the program that has fostered my love for chemistry, and help younger undergraduate students also find the fun in a challenging course!
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Oversaw laboratory meetings and ran specific experiments to solidify key chemistry concepts</li>
+                                <li>Collaborated with faculty and provided feedback from an instructor's perspective to optimize experiments for future semesters</li>
+                                <li>Wrote weekly quizzes and graded over 150 lab reports per semester</li>
+                            </ul>
                         </div>
-                        
-                        <ul class="achievements">
-                            <li>Oversaw laboratory meetings and ran specific experiments to solidify key chemistry concepts</li>
-                            <li>Collaborated with faculty and provided feedback from an instructor's perspective to optimize experiments for future semesters</li>
-                            <li>Wrote weekly quizzes and graded over 150 lab reports per semester in a timely manner to ensure conceptual understanding and provide constructive feedback to enhance students' writing</li>
-                        </ul>
+
+                        <!-- Position 2 -->
+                        <div style="margin-bottom: 2rem; padding-top: 2rem; border-top: 2px solid rgba(52, 152, 219, 0.1);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">Introduction to Structure and Dynamics Workshop Leader</h3>
+                                <div class="duration">August 2023 - Present</div>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    Assisted students in organic chemistry laboratory, focusing on advanced techniques and complex synthesis procedures.
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Guided students through multi-step organic synthesis experiments</li>
+                                <li>Provided one-on-one tutoring during lab sessions</li>
+                                <li>Maintained lab safety and equipment</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <!-- Experience Item 2 -->
                 <div class="timeline-item">
                     <div class="experience-card">
@@ -1183,72 +1339,552 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
+        <!-- Courses Section -->
+        <section id="courses">
             <div class="section-header">
                 <div class="section-number">04</div>
-                <h2>Featured Projects</h2>
+                <h2>Academic Coursework</h2>
                 <p class="section-description">
-                    Showcasing the work I'm most proud of
+                    A comprehensive record of my undergraduate coursework
                 </p>
             </div>
 
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Project Name 1</h3>
-                        <p class="project-description">
-                            A comprehensive description of this project, the challenges faced, solutions implemented, 
-                            and the impact it created. This project showcases my ability to [key skills].
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Tag 1</span>
-                            <span class="project-tag">Tag 2</span>
-                            <span class="project-tag">Tag 3</span>
+            <div class="courses-container">
+                <!-- Fall 2022 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Fall 2022</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>4.000
                         </div>
                     </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">BIL 150</td>
+                                <td class="course-name">General Biology</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BIL 151</td>
+                                <td class="course-name">General Biology Laboratory</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 113</td>
+                                <td class="course-name">Chemistry Laboratory I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 121</td>
+                                <td class="course-name">Principles of Chemistry</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">FYD 101</td>
+                                <td class="course-name">First Year Directions</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 101</td>
+                                <td class="course-name">Introduction to Theatre</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">WRS 105</td>
+                                <td class="course-name">First Year Writing I</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Project Name 2</h3>
-                        <p class="project-description">
-                            Another significant project that demonstrates my expertise in [area]. Working on this 
-                            taught me valuable lessons about [insight], and resulted in [outcome].
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Tag 1</span>
-                            <span class="project-tag">Tag 2</span>
-                            <span class="project-tag">Tag 3</span>
+                <!-- Spring 2023 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Spring 2023</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>4.000
                         </div>
                     </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">BIL 160</td>
+                                <td class="course-name">Evolution and Biodiversity</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BIL 161</td>
+                                <td class="course-name">Evolution and Biodiversity Laboratory</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 205</td>
+                                <td class="course-name">Chemical Dynamics Laboratory</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 221</td>
+                                <td class="course-name">Introduction to Structure and Dynamics</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">MTH 162</td>
+                                <td class="course-name">Calculus II</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">WRS 106</td>
+                                <td class="course-name">First Year Writing II</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Project Name 3</h3>
-                        <p class="project-description">
-                            This project was particularly challenging because [challenge]. Through innovative thinking 
-                            and collaboration, we achieved [success metric] and delivered exceptional value.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Tag 1</span>
-                            <span class="project-tag">Tag 2</span>
-                            <span class="project-tag">Tag 3</span>
+                <!-- Fall 2023 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Fall 2023</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>3.906
                         </div>
                     </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">CHM 222</td>
+                                <td class="course-name">Organic Reactions and Synthesis</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A-</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 381</td>
+                                <td class="course-name">Workshop Leaders in Chemistry I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">PHY 106</td>
+                                <td class="course-name">College Physics Laboratory I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A-</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">PHY 201</td>
+                                <td class="course-name">University Physics 1 for the Sciences</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">PSY 110</td>
+                                <td class="course-name">Introduction to Psychology</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 101</td>
+                                <td class="course-name">Beginning/Intermediate Tap</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Spring 2024 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Spring 2024</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>4.000
+                        </div>
+                    </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">BMB 401</td>
+                                <td class="course-name">Biochemistry for the Biomedical Sciences</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 206</td>
+                                <td class="course-name">Organic Reactions and Synthesis Laboratory</td>
+                                <td class="course-credits">2</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 381</td>
+                                <td class="course-name">Workshop Leaders in Chemistry I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">HCS 217</td>
+                                <td class="course-name">Medical Terminology</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">PHY 202</td>
+                                <td class="course-name">University Physics 2 for the Sciences</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 105</td>
+                                <td class="course-name">Introduction to Acting</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 162</td>
+                                <td class="course-name">Intermediate/Advanced Tap</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                 <!-- Fall 2024 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Fall 2024</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>3.944
+                        </div>
+                    </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">BIL 255</td>
+                                <td class="course-name">Cell and Molecular Biology</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A-</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BPH 206</td>
+                                <td class="course-name">Introduction to Public Health</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 214</td>
+                                <td class="course-name">Quantitative Analytical Chemistry</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 381</td>
+                                <td class="course-name">Workshop Leaders in Chemistry I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">HCS 212</td>
+                                <td class="course-name">Human Anatoomy</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">HCS 213</td>
+                                <td class="course-name">Human Anatomy Laboratory</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">PHY 108</td>
+                                <td class="course-name">Physics Laboratory 2</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 161</td>
+                                <td class="course-name">Beginning/Intermediate Tap</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Spring 2025 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Spring 2025</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>4.000
+                        </div>
+                    </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                            <tr>
+                                <td class="course-code">CHM 381</td>
+                                <td class="course-name">Workshop Leaders in Chemistry I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">HCS 202</td>
+                                <td class="course-name">Introductory Statistics in Health Care</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">HCS 215</td>
+                                <td class="course-name">Principles of Systemic Physiology</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">HCS 216</td>
+                                <td class="course-name">Principles of Systemic Physiology Laboratory</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">MIC 301</td>
+                                <td class="course-name">Introduction to Microbes and the Immune System</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">MIC 304</td>
+                                <td class="course-name">Introduction to Microbes and the Immune System Laboratory</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 141</td>
+                                <td class="course-name">Introduction to Theatre Design</td>
+                                <td class="course-credits">2</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 143</td>
+                                <td class="course-name">Backstage Crew Laboratory</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 162</td>
+                                <td class="course-name">Intermediate/Advanced Tap</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                 <!-- Fall 2025 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Fall 2025</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>4.000
+                        </div>
+                    </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">BIL 250</td>
+                                <td class="course-name">Genetics</td>
+                                <td class="course-credits">4</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BPH 301</td>
+                                <td class="course-name">Human Sexuality and Vulnerable Populations</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BPH 321</td>
+                                <td class="course-name">Health Promotion and Disease Prevention</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BPH 461</td>
+                                <td class="course-name">Practicum in Health Disparities Research</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 381</td>
+                                <td class="course-name">Workshop Leaders in Chemistry I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 161</td>
+                                <td class="course-name">Beginning/Intermediate Tap</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-a">A+</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 264</td>
+                                <td class="course-name">Introduction to the Theatre Industry</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 384</td>
+                                <td class="course-name">History of the American Musical Theatre</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-a">A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Spring 2026 -->
+                <div class="semester-section">
+                    <div class="semester-header">
+                        <h3 class="semester-title">Spring 2026</h3>
+                        <div class="semester-gpa">
+                            <span class="label">Semester GPA: </span>IP
+                        </div>
+                    </div>
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Name</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-code">BPH 208</td>
+                                <td class="course-name">Introductory Epidemiology</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">BPH 461</td>
+                                <td class="course-name">Practicum in Health Disparities Research</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            <tr>
+                                <td class="course-code">CHM 381</td>
+                                <td class="course-name">Workshop Leaders in Chemistry I</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">CSC 118</td>
+                                <td class="course-name">Information Technology and Society</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">KIN 150</td>
+                                <td class="course-name">General Nutrition for Health and Performance</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 410</td>
+                                <td class="course-name">Independent Study</td>
+                                <td class="course-credits">1</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 453</td>
+                                <td class="course-name">Theatre Arts Capstone</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                            </tr>
+                                <td class="course-code">THA 482</td>
+                                <td class="course-name">Theatre History II</td>
+                                <td class="course-credits">3</td>
+                                <td class="course-grade grade-b">IP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Cumulative GPA -->
+                <div class="cumulative-gpa">
+                    <h3>Cumulative GPA</h3>
+                    <div class="gpa-value">3.980</div>
+                    <div class="gpa-scale">out of 4.000</div>
                 </div>
             </div>
         </section>
