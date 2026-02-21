@@ -517,7 +517,11 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
         }
+
 
         .contact-item {
             display: flex;
@@ -529,14 +533,21 @@
             border: 1px solid rgba(52, 152, 219, 0.15);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contact-item > div:last-child {
+            text-align: center;
+            flex: 1;
         }
 
         .contact-item:hover {
             border-color: var(--primary-accent);
             transform: translateX(10px);
             box-shadow: 0 4px 8px rgba(52, 152, 219, 0.1);
-        }
-
+         }      
+     
         .contact-icon {
             font-size: 1.5rem;
             color: var(--primary-accent);
@@ -1883,72 +1894,23 @@
                 <div class="research-paper">
                     <div class="research-header">
                         <div style="flex: 1;">
-                            <h3 class="research-title">Title of Your Research Paper or Project</h3>
-                            <div class="research-meta">
-                                <div class="research-meta-item">
-                                    <span>📅</span>
-                                    <span>Published: January 2024</span>
-                                </div>
-                                <div class="research-meta-item">
-                                    <span>📚</span>
-                                    <span>Journal/Conference Name</span>
-                                </div>
-                            </div>
+                            <h3 class="research-title">HPV Vaccination to Prevent Cancer: Awareness, Access, and Uptake among University Students</h3>
                         </div>
-                        <div class="research-status status-published">Published</div>
-                    </div>
-
-                    <div class="research-authors">
-                        <span class="author-tag">Your Name</span>
-                        <span class="author-tag">Co-Author 1</span>
-                        <span class="author-tag">Co-Author 2</span>
+                        <div class="research-status status-in-progress">In-Progress</div>
                     </div>
 
                     <div class="research-abstract">
                         <p>
-                            <strong>Abstract:</strong> Provide a comprehensive abstract of your research paper here. 
-                            This should include the research question, methodology, key findings, and implications. 
-                            Explain the significance of your work and how it contributes to the field.
-                        </p>
-                        <p>
-                            You can add additional paragraphs to discuss specific aspects of your research, 
-                            challenges you encountered, novel approaches you developed, or the impact of your findings.
+                            <strong>Abstract:</strong> This researh project aims to identify percieved beliefs amongst students about the HPV vaccine, and the use to a series of short-form videos to
+                            try to drive vaccination by educating on benefits and myths.
                         </p>
                     </div>
 
                     <div class="research-keywords">
-                        <span class="keyword-tag">Keyword 1</span>
-                        <span class="keyword-tag">Keyword 2</span>
-                        <span class="keyword-tag">Keyword 3</span>
-                        <span class="keyword-tag">Keyword 4</span>
-                        <span class="keyword-tag">Keyword 5</span>
-                    </div>
-
-                    <div class="research-images">
-                        <div class="research-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Research visualization">
-                            <div class="research-caption">Data visualization or graph</div>
-                        </div>
-                        <div class="research-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Research methodology">
-                            <div class="research-caption">Methodology diagram</div>
-                        </div>
-                        <div class="research-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Results">
-                            <div class="research-caption">Key findings</div>
-                        </div>
-                    </div>
-
-                    <div class="research-links">
-                        <a href="#" class="research-link link-primary">
-                            📄 Read Paper
-                        </a>
-                        <a href="#" class="research-link link-secondary">
-                            💻 View Code
-                        </a>
-                        <a href="#" class="research-link link-secondary">
-                            📊 Dataset
-                        </a>
+                        <span class="keyword-tag">Vaccination</span>
+                        <span class="keyword-tag">Health Communication</span>
+                        <span class="keyword-tag">Study Recruitment</span>
+                        <span class="keyword-tag">Percieved Barriers</span>
                     </div>
                 </div>
 
@@ -1956,58 +1918,23 @@
                 <div class="research-paper">
                     <div class="research-header">
                         <div style="flex: 1;">
-                            <h3 class="research-title">Another Research Project Title</h3>
-                            <div class="research-meta">
-                                <div class="research-meta-item">
-                                    <span>📅</span>
-                                    <span>Submitted: November 2024</span>
-                                </div>
-                                <div class="research-meta-item">
-                                    <span>📚</span>
-                                    <span>Conference Name 2025</span>
-                                </div>
-                            </div>
+                            <h3 class="research-title">Decoding Sexual Agency: The Influence of Gender and Sexual Orientation among 18–20-Year-Olds</h3>
                         </div>
-                        <div class="research-status status-under-review">Under Review</div>
-                    </div>
-
-                    <div class="research-authors">
-                        <span class="author-tag">Your Name</span>
-                        <span class="author-tag">Co-Author 1</span>
+                        <div class="research-status status-in-progress">In Progress</div>
                     </div>
 
                     <div class="research-abstract">
                         <p>
-                            <strong>Abstract:</strong> This research explores [research topic]. The study employs 
-                            [methodology] to investigate [research question]. Our findings demonstrate [key results], 
-                            which have significant implications for [field/application].
+                            <strong>Abstract:</strong> This research explored the impact gender and sexual orientation have on sexual agency, which is defined as "the capacity to initiate, accept, refuse, and negotiate sexual activity in line with one’s preferences and boundaries."
+                        </p>
+                        <p>
+                            Results found that one's sexual orientation has more of an effect on sexual agency than gender does.
                         </p>
                     </div>
 
                     <div class="research-keywords">
-                        <span class="keyword-tag">Machine Learning</span>
-                        <span class="keyword-tag">Data Science</span>
-                        <span class="keyword-tag">Algorithm</span>
-                    </div>
-
-                    <div class="research-images">
-                        <div class="research-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Research setup">
-                            <div class="research-caption">Experimental setup</div>
-                        </div>
-                        <div class="research-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Analysis">
-                            <div class="research-caption">Statistical analysis</div>
-                        </div>
-                    </div>
-
-                    <div class="research-links">
-                        <a href="#" class="research-link link-primary">
-                            📄 Preprint
-                        </a>
-                        <a href="#" class="research-link link-secondary">
-                            🎥 Presentation
-                        </a>
+                        <span class="keyword-tag">Gender and Sexual Orientation</span>
+                        <span class="keyword-tag">Sexual Agency</span>
                     </div>
                 </div>
 
@@ -2015,52 +1942,23 @@
                 <div class="research-paper">
                     <div class="research-header">
                         <div style="flex: 1;">
-                            <h3 class="research-title">Ongoing Research Initiative</h3>
-                            <div class="research-meta">
-                                <div class="research-meta-item">
-                                    <span>📅</span>
-                                    <span>Started: September 2024</span>
-                                </div>
-                                <div class="research-meta-item">
-                                    <span>🏢</span>
-                                    <span>Your Institution/Lab</span>
-                                </div>
-                            </div>
+                            <h3 class="research-title">Theatre as a Tool for Health Promotion and Disease Prevention</h3>
                         </div>
                         <div class="research-status status-in-progress">In Progress</div>
                     </div>
 
-                    <div class="research-authors">
-                        <span class="author-tag">Your Name (Lead Researcher)</span>
-                        <span class="author-tag">Collaborator 1</span>
-                        <span class="author-tag">Collaborator 2</span>
-                    </div>
-
                     <div class="research-abstract">
                         <p>
-                            <strong>Project Overview:</strong> This ongoing research project investigates [research area]. 
-                            We are developing [methodology/approach] to address [problem/gap in knowledge]. 
-                            Preliminary results suggest [early findings].
-                        </p>
-                        <p>
-                            The project combines [techniques/approaches] and has potential applications in [fields]. 
-                            Expected completion is [timeline].
+                            <strong>Project Overview:</strong> For my Theatre Arts double major capstone project, I decided to blend both of my passions together
+                            and analyze how theatre can be used as a public health promotion and communication tool. The arts, theatre specifically, are historically
+                            undervalued in terms of cultural impact, and using it as a tool to educate about various public health topics is a strong avenue for future
+                            health communicators to take advantage of.
                         </p>
                     </div>
 
                     <div class="research-keywords">
-                        <span class="keyword-tag">Research Area</span>
-                        <span class="keyword-tag">Methodology</span>
-                        <span class="keyword-tag">Innovation</span>
-                    </div>
-
-                    <div class="research-links">
-                        <a href="#" class="research-link link-primary">
-                            📖 Project Page
-                        </a>
-                        <a href="#" class="research-link link-secondary">
-                            📧 Collaborate
-                        </a>
+                        <span class="keyword-tag">Theatre</span>
+                        <span class="keyword-tag">Health Promotion</span>
                     </div>
                 </div>
             </div>
@@ -2071,79 +1969,40 @@
             <div class="section-header">
                 <div class="section-number">06</div>
                 <h2>Let's Connect</h2>
-                <p class="section-description">
-                    I'm always open to new opportunities and collaborations
-                </p>
-            </div>
+            <div></div>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <strong>Email</strong><br>
-                            <a href="mailto:your.email@example.com">your.email@example.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <strong>Phone</strong><br>
-                            <a href="tel:+1234567890">(123) 456-7890</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div>
-                            <strong>LinkedIn</strong><br>
-                            <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🐙</div>
-                        <div>
-                            <strong>GitHub</strong><br>
-                            <a href="https://github.com/yourprofile" target="_blank">github.com/yourprofile</a>
-                        </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
                     </div>
                 </div>
-
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:+16145069410">(614)-506-9410</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div>
+                        <strong>LinkedIn</strong><br>
+                        <a href="https://linkedin.com/in/johnedwinbrown/" target="_blank">linkedin.com/in/johnedwinbrown/</a>
+                    </div>
                 </div>
             </div>
+        </section>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="social-links">
-            <a href="#" target="_blank" aria-label="LinkedIn">💼</a>
-            <a href="#" target="_blank" aria-label="GitHub">🐙</a>
-            <a href="#" target="_blank" aria-label="Twitter">🐦</a>
-            <a href="#" target="_blank" aria-label="Portfolio">🌐</a>
-        </div>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <p>&copy; 2026 John Brown. All rights reserved.</p>
     </footer>
 </body>
 </html>
