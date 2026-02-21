@@ -372,6 +372,7 @@
         .experience-description {
             margin-bottom: 2rem;
             line-height: 1.8;
+            text-align: left;
         }
 
         .experience-images {
@@ -418,6 +419,7 @@
         .achievements {
             list-style: none;
             margin-top: 1.5rem;
+            text-align: left;
         }
 
         .achievements li {
@@ -432,54 +434,6 @@
             left: 0;
             color: var(--primary-accent);
             font-size: 1.2rem;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(52, 152, 219, 0.15);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(52, 152, 219, 0.1);
-        }
-
-        .skill-category h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-accent);
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            background: rgba(52, 152, 219, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(52, 152, 219, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(52, 152, 219, 0.2);
-            transform: translateY(-2px);
         }
 
         /* Projects Gallery */
@@ -1161,9 +1115,96 @@
             <div class="section-header">
                 <div class="section-number">02</div>
                 <h2>Work Experience</h2>
-            </div>
-
             <div class="timeline">
+
+                <!-- Experience Item - Multiple Positions -->
+                <div class="timeline-item">
+                    <div class="experience-card">
+                        <!-- Company Name First -->
+                        <div class="experience-header">
+                            <div style="flex: 1;">
+                                <p class="company" style="font-size: 1.8rem; margin-bottom: 1rem;">Johns Hopkins Center for Talented Youth</p>
+                            </div>
+                        </div>
+
+                        <!-- Position 1 -->
+                        <div style="margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">General Chemistry Laboratory TA</h3>
+                                <div class="duration">June 2025 - August 2025</div>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    During my time at CTY, I gained valuable clinical experience working in the Health Office at the Carlisle, PA site. Collaborating with on-site 
+                                    nurses from around the country, I was able to put my academics into practice by taking vital sign of student patients and help assess students.
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Participated in the day-to-day operations of the health office, including multiple medication distribution periods and communicating with parents about health office visits</li>
+                                <li>Aided nurses with health office visits, including taking vital signs and charting</li>
+                                <li>Transported students to and from urgent care and emergency department visits, communicating with providers about specific student needs</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="experience-card">
+                        <!-- Company Name First -->
+                        <div class="experience-header">
+                            <div style="flex: 1;">
+                                <p class="company" style="font-size: 1.8rem; margin-bottom: 1rem;">Sexual Health Dissemination Lab</p>
+                            </div>
+                        </div>
+
+                        <!-- Position 1 -->
+                        <div style="margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">HPV Now Undergraduate Recruitment Ambassador</h3>
+                                <div class="duration">August 2024 - Present</div>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    I was selected by my PI, Dr. Andrew Porter, as one of few undergraduate students on this grant-funded study aiming to determine whether a short series of podcast-style 
+                                    education videos can drive HPV vaccination amongst college students.
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Recruits undergraduate students to the project through multiple means on campus, such as tabling and presenting at student organization meetings</li>
+                                <li>Creates promotional material for recruitment events to appeal to college students</li>
+                                <li>contributes to manuscripts about the project and results</li>
+                            </ul>
+                        </div>
+
+                        <!-- Position 2 -->
+                        <div style="margin-bottom: 2rem; padding-top: 2rem; border-top: 2px solid rgba(52, 152, 219, 0.1);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">Lead Social Media Intern/Research Assistant</h3>
+                                <div class="duration">January 2025 - Present</div>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    The main intervention our lab uses is The Sex Wrap, an academic podcast that uses health promotion and communication theories to disperse related
+                                    sexual health information. While the podcast drops weekly episodes, our social media accounts are run 7 days a week, building community and drawing attention
+                                    to the podcast.
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Responsible for posting to social media accounts weekly engaging in conversations relating to sexual health education, reeling back to The Sex Wrap podcast intervention</li>
+                                <li>As a lead intern, responsible for sending out weekly recap emails and ensuring all members of the lab are involved and posting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- Experience Item - Multiple Positions -->
                 <div class="timeline-item">
                     <div class="experience-card">
@@ -1178,7 +1219,7 @@
                         <div style="margin-bottom: 2rem;">
                             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
                                 <h3 class="job-title" style="font-size: 1.5rem;">General Chemistry Laboratory TA</h3>
-                                <div class="duration">August 2024 - Present</div>
+                                <div class="duration">November 2025 - Present</div>
                             </div>
                             
                             <div class="experience-description">
@@ -1206,134 +1247,72 @@
                             
                             <div class="experience-description">
                                 <p>
-                                    Assisted students in organic chemistry laboratory, focusing on advanced techniques and complex synthesis procedures.
+                                    As a workshop leader for CHM 221, I hosted weekly sessions for students who seek extra practice and review over key 
+                                    conceptual information. By identifying where students were at in their knowledge, I was able to give them appropriate
+                                    practice for their skill level, and focus on students who needed more help.
                                 </p>
                             </div>
 
                             <ul class="achievements">
-                                <li>Guided students through multi-step organic synthesis experiments</li>
-                                <li>Provided one-on-one tutoring during lab sessions</li>
-                                <li>Maintained lab safety and equipment</li>
+                                <li>Led weekly workshop sessions in organic chemistry, promoting comprehension and skill application</li>
+                                <li>Collaborated with faculty to report on student progress and identified common student struggles</li>
+                                <li>Created practice questions that align with recent class content to reinforce key concepts and increase students problem solving skills</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <!-- Experience Item 2 -->
+
+                <!-- Experience Item - Multiple Positions -->
                 <div class="timeline-item">
                     <div class="experience-card">
+                        <!-- Company Name First -->
                         <div class="experience-header">
-                            <div>
-                                <h3 class="job-title">Previous Job Title</h3>
-                                <p class="company">Previous Company</p>
-                            </div>
-                            <div class="duration">2017 - 2020</div>
-                        </div>
-                        
-                        <div class="experience-description">
-                            <p>
-                                During my time at [Company], I focused on [main responsibilities]. This role was 
-                                instrumental in developing my expertise in [specific skills or areas].
-                            </p>
-                            <p>
-                                A particularly memorable project involved [detailed story about a significant project]. 
-                                The challenges we faced taught me [lessons learned], and the success of this initiative 
-                                demonstrated [impact or value].
-                            </p>
-                        </div>
-
-                        <ul class="achievements">
-                            <li>Developed and launched [specific product/feature]</li>
-                            <li>Collaborated with cross-functional teams to [achievement]</li>
-                            <li>Reduced costs by X% through [specific strategy]</li>
-                            <li>Mentored X junior team members</li>
-                        </ul>
-
-                        <div class="experience-images">
-                            <div class="exp-image">
-                                <img src="https://via.placeholder.com/400x300" alt="Work sample">
-                                <div class="image-caption">Key project or deliverable</div>
-                            </div>
-                            <div class="exp-image">
-                                <img src="https://via.placeholder.com/400x300" alt="Team event">
-                                <div class="image-caption">Team collaboration</div>
+                            <div style="flex: 1;">
+                                <p class="company" style="font-size: 1.8rem; margin-bottom: 1rem;">University of Miami Office of Undergraduate Admission</p>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Experience Item 3 -->
-                <div class="timeline-item">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="job-title">Earlier Role</h3>
-                                <p class="company">Earlier Company</p>
+                        <!-- Position 1 -->
+                        <div style="margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">President's 100 Student Ambassador</h3>
+                                <div class="duration">December 2022 - Present</div>
                             </div>
-                            <div class="duration">2015 - 2017</div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    The President's 100 Student Ambassador's are selected from a highly competitive pool of undergraduate students to represent the University of Miami. Every week, I get to tour prospective students
+                                    and show them everything that makes "The U" amazing; everything from athletics to social life.
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Conducted engaging and informative campus tours for prospective students, showcasing unique assets of the University’s academic and social programs</li>
+                                <li>Contributed to recruitment efforts by working large-scale admissions events per semester representing the university with enthusiasm and professionalism</li>
+                                <li>Memorized a list of talking points relating to each stop about academic and social life, narrowing down important information on each tour to tailor for each prospective student's interests</li>
+                            </ul>
                         </div>
-                        
-                        <div class="experience-description">
-                            <p>
-                                This was where it all began. As a [role], I learned the fundamentals of [field/industry] 
-                                and discovered my passion for [specific area]. Every day brought new challenges and 
-                                opportunities to grow.
-                            </p>
+
+                        <!-- Position 2 -->
+                        <div style="margin-bottom: 2rem; padding-top: 2rem; border-top: 2px solid rgba(52, 152, 219, 0.1);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                                <h3 class="job-title" style="font-size: 1.5rem;">President's 100 Tour Captain</h3>
+                                <div class="duration">January 2024 - May 2025</div>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <p>
+                                    As a tour captain of three semesters, I got to step into a bigger role within the organization and become an active asset in the training and evaluation
+                                    of tour guides. From helping plan social events to shadowing new tour guides, I became an active and key member of the organization.
+                                </p>
+                            </div>
+
+                            <ul class="achievements">
+                                <li>Led a team of tour guides and oversaw their performance by criteria established by the training and evaluation chairs of our advisory board, and provided constructive criticism as needed</li>
+                                <li>Collaborated with the advisory board to refine tour duties and contributed to the constant advancement of our tour program</li>
+                                <li>Coordinated tour groups by proactively dividing prospective students into tailored groups to ensure a personalized experience</li>
+                            </ul>
                         </div>
-
-                        <ul class="achievements">
-                            <li>Successfully completed [number] projects within first year</li>
-                            <li>Contributed to [specific initiative or outcome]</li>
-                            <li>Built strong foundation in [key skills]</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="section-header">
-                <div class="section-number">03</div>
-                <h2>Skills & Expertise</h2>
-                <p class="section-description">
-                    The tools and talents I bring to the table
-                </p>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Skill 1</span>
-                        <span class="skill-tag">Skill 2</span>
-                        <span class="skill-tag">Skill 3</span>
-                        <span class="skill-tag">Skill 4</span>
-                        <span class="skill-tag">Skill 5</span>
-                        <span class="skill-tag">Skill 6</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Professional Skills</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Strategic Planning</span>
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Team Building</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skill-items">
-                        <span class="skill-tag">Tool 1</span>
-                        <span class="skill-tag">Tool 2</span>
-                        <span class="skill-tag">Tool 3</span>
-                        <span class="skill-tag">Tool 4</span>
-                        <span class="skill-tag">Tool 5</span>
-                        <span class="skill-tag">Tool 6</span>
                     </div>
                 </div>
             </div>
@@ -1342,7 +1321,7 @@
         <!-- Courses Section -->
         <section id="courses">
             <div class="section-header">
-                <div class="section-number">04</div>
+                <div class="section-number">03</div>
                 <h2>Academic Coursework</h2>
                 <p class="section-description">
                     A comprehensive record of my undergraduate coursework
@@ -1892,10 +1871,10 @@
         <!-- Research Section -->
         <section id="research">
             <div class="section-header">
-                <div class="section-number">05</div>
+                <div class="section-number">04</div>
                 <h2>Research & Publications</h2>
                 <p class="section-description">
-                    Academic contributions and ongoing research initiatives
+                    My previous research experience
                 </p>
             </div>
 
